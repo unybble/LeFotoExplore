@@ -1,0 +1,33 @@
+﻿<Properties StartupConfiguration="{92E6E637-C049-473D-B159-56A905CDA75E}|TheWeather">
+  <MonoDevelop.Ide.ItemProperties.LeFotoExplore PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="LeFotoExplore/client-app/src/main.js">
+    <Files>
+      <File FileName="LeFotoExplore/client-app/src/App.vue" Line="30" Column="73" />
+      <File FileName="LeFotoExplore/client-app/src/main.js" Line="15" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="LeFotoExplore" expanded="True">
+            <Node name="LeFotoExplore" expanded="True">
+              <Node name="client-app" expanded="True">
+                <Node name="src" expanded="True">
+                  <Node name="main.js" selected="True" />
+                </Node>
+              </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="client-app" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

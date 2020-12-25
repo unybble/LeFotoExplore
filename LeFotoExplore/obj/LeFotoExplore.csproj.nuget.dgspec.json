@@ -1,0 +1,74 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/Jen/Projects/LeFotoExplore/LeFotoExplore/LeFotoExplore.csproj": {}
+  },
+  "projects": {
+    "/Users/Jen/Projects/LeFotoExplore/LeFotoExplore/LeFotoExplore.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/Jen/Projects/LeFotoExplore/LeFotoExplore/LeFotoExplore.csproj",
+        "projectName": "LeFotoExplore",
+        "projectPath": "/Users/Jen/Projects/LeFotoExplore/LeFotoExplore/LeFotoExplore.csproj",
+        "packagesPath": "/Users/Jen/.nuget/packages/",
+        "outputPath": "/Users/Jen/Projects/LeFotoExplore/LeFotoExplore/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/Jen/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Json.Net": {
+              "target": "Package",
+              "version": "[1.0.23, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
