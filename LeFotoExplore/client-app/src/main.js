@@ -13,28 +13,70 @@ Vue.config.productionTip = false
 
 
 import 'ol/ol.css';
+import KML from 'ol/format/KML';
 import Feature from 'ol/Feature';
 import Geolocation from 'ol/Geolocation';
 import Map from 'ol/Map';
 import Point from 'ol/geom/Point';
+import Stamen from 'ol/source/Stamen';
 import View from 'ol/View';
 import { Circle as CircleStyle, Fill, Stroke, Style } from 'ol/style';
 import { OSM, Vector as VectorSource } from 'ol/source';
-import { Tile as TileLayer, Vector as VectorLayer } from 'ol/layer';
+import { Tile as TileLayer, Vector as VectorLayer, Heatmap as HeatmapLayer } from 'ol/layer';
+
+var blur = document.getElementById('blur');
+var radius = document.getElementById('radius');
 
 var view = new View({
     center: [0, 0],
     zoom: 2,
 });
 
-var map = new Map({
-    layers: [
-        new TileLayer({
-            source: new OSM(),
-        })],
-    target: 'map',
-    view: view,
+var vector = new HeatmapLayer({
+    source: new VectorSource({
+        url: 'data/kml/2012_Earthquakes_Mag5.kml',
+        format: new KML({
+            extractStyles: false,
+        }),
+    }),
+    blur: parseInt(blur.value, 10),
+    radius: parseInt(radius.value, 10),
+    weight: function (feature) {
+        // 2012_Earthquakes_Mag5.kml stores the magnitude of each earthquake in a
+        // standards-violating <magnitude> tag in each Placemark.  We extract it from
+        // the Placemark's name instead.
+        var name = feature.get('name');
+        var magnitude = parseFloat(name.substr(2));
+        return magnitude - 5;
+    },
 });
+
+var raster = new TileLayer({
+    source: new Stamen({
+        layer: 'toner',
+    }),
+});
+
+new Map({
+    layers: [raster, vector],
+    target: 'map',
+    view: new View({
+        center: [0, 0],
+        zoom: 2,
+    }),
+});
+
+var blurHandler = function () {
+    vector.setBlur(parseInt(blur.value, 10));
+};
+blur.addEventListener('input', blurHandler);
+blur.addEventListener('change', blurHandler);
+
+var radiusHandler = function () {
+    vector.setRadius(parseInt(radius.value, 10));
+};
+radius.addEventListener('input', radiusHandler);
+radius.addEventListener('change', radiusHandler);
 
 var geolocation = new Geolocation({
     // enableHighAccuracy must be set to true to have the heading value.
